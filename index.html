@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>ISLAND - Mapa Épico Interactivo</title>
+  <title>ISLAND - Epic Interactive Map</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -36,15 +36,15 @@
 <body>
   <div class="title-overlay">
     <h1>ISLAND</h1>
-    <p>Toca los marcadores</p>
+    <p>Tap the markers</p>
   </div>
   <div id="map"></div>
   <div class="legend">
-    <strong>Leyenda</strong>
-    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div> Ciudad</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#67e8f9;"></div> Glaciar</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> Punto épico</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> Región</div>
+    <strong>Legend</strong>
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div> City</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#67e8f9;"></div> Glacier</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> Epic Point</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> Region</div>
   </div>
 
   <script>
@@ -64,14 +64,14 @@
           const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
           const imgHtml = `
             <div class="popup-images">
-              <div><img src="${loc.image || ''}" onerror="this.src='https://picsum.photos/400/250?random=1'" alt="Ubicación"><div class="label">Ubicación</div></div>
-              <div><img src="${loc.movie_image || ''}" onerror="this.src='https://picsum.photos/400/250?random=2'" alt="Película"><div class="label">Película / Serie</div></div>
+              <div><img src="${loc.image || ''}" onerror="this.src='https://picsum.photos/400/250?random=1'" alt="Location"><div class="label">Location</div></div>
+              <div><img src="${loc.movie_image || ''}" onerror="this.src='https://picsum.photos/400/250?random=2'" alt="Movie"><div class="label">Movie / Series</div></div>
             </div>`;
           marker.bindPopup(`
             <div class="popup-content">
               <h3>${loc.name}</h3>
               <p>${loc.description}</p>
-              <p class="temp">🌡️ Verano: ${loc.temp_summer} | Invierno: ${loc.temp_winter}</p>
+              <p class="temp">🌡️ Summer: ${loc.temp_summer} | Winter: ${loc.temp_winter}</p>
               <p class="epic">✨ ${loc.epic}</p>
               <p class="source">🎬 ${loc.source}</p>
               ${imgHtml}
