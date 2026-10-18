@@ -11,41 +11,25 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; width: 100%; overflow: hidden; font-family: system-ui, sans-serif; background: #0a1628; color: #e8f0f8; }
     #map { height: 100%; width: 100%; }
-    .title-overlay {
-      position: absolute; top: 12px; left: 12px; z-index: 1000;
-      background: rgba(10,22,40,0.92); padding: 12px 20px; border-radius: 10px;
-      border: 2px solid #4a90a4; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    }
-    .title-overlay h1 {
-      font-size: 2rem; letter-spacing: 6px; color: #ffffff;
-      text-shadow: 0 0 12px #4a90a4; margin: 0;
-    }
+    .title-overlay { position: absolute; top: 12px; left: 12px; z-index: 1000; background: rgba(10,22,40,0.92); padding: 12px 20px; border-radius: 10px; border: 2px solid #4a90a4; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .title-overlay h1 { font-size: 2rem; letter-spacing: 6px; color: #ffffff; text-shadow: 0 0 12px #4a90a4; margin: 0; }
     .title-overlay p { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
-    .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 10px; border: 1px solid #4a90a4; max-width: 92vw; }
+    .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 12px; border: 1px solid #4a90a4; max-width: 95vw; }
     .leaflet-popup-tip { background: #0f1f33; }
-    .popup-content { font-size: 0.9rem; }
-    .popup-content h3 { color: #7ec8e3; margin: 0 0 6px 0; font-size: 1.15rem; }
-    .popup-content .temp {
-      color: #7dd3fc; font-weight: bold; margin: 6px 0;
-      background: rgba(74,144,164,0.2); padding: 6px 8px; border-radius: 6px;
-    }
-    .popup-content .epic { color: #ffd700; font-style: italic; margin: 4px 0; }
-    .popup-content .source { color: #b8a0ff; margin: 6px 0 4px 0; font-size: 0.85rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
-    .popup-images { display: flex; gap: 8px; margin-top: 10px; }
-    .popup-images img { width: 48%; height: 120px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; }
-    .popup-images .label { font-size: 0.7rem; text-align: center; opacity: 0.8; margin-top: 3px; }
-    .legend {
-      position: absolute; bottom: 18px; right: 12px; z-index: 1000;
-      background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px;
-      border: 2px solid #4a90a4; font-size: 0.8rem; min-width: 150px;
-    }
-    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; font-size: 0.9rem; }
+    .popup-content { font-size: 0.88rem; max-height: 70vh; overflow-y: auto; }
+    .popup-content h3 { color: #7ec8e3; margin: 0 0 8px 0; font-size: 1.2rem; }
+    .popup-content .temp { color: #7dd3fc; font-weight: bold; margin: 6px 0; background: rgba(74,144,164,0.25); padding: 6px 10px; border-radius: 6px; }
+    .popup-content .epic { color: #ffd700; font-style: italic; margin: 6px 0; }
+    .popup-content .source { color: #b8a0ff; margin: 8px 0 6px 0; font-size: 0.82rem; border-top: 1px solid #4a90a4; padding-top: 8px; line-height: 1.4; }
+    .popup-images { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .popup-images > div { width: 48%; }
+    .popup-images img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; }
+    .popup-images .label { font-size: 0.65rem; text-align: center; opacity: 0.85; margin-top: 2px; }
+    .legend { position: absolute; bottom: 18px; right: 12px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px; border: 2px solid #4a90a4; font-size: 0.8rem; min-width: 150px; }
+    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; }
     .legend-item { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
     .legend-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #fff; flex-shrink: 0; }
-    @media (max-width: 600px) {
-      .title-overlay h1 { font-size: 1.5rem; letter-spacing: 3px; }
-      .popup-images img { height: 100px; }
-    }
+    @media (max-width: 600px) { .title-overlay h1 { font-size: 1.5rem; } .popup-images img { height: 80px; } }
   </style>
 </head>
 <body>
@@ -77,11 +61,17 @@
         locations.forEach(loc => {
           const icon = icons[loc.type] || icons.city;
           const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
-          const imgHtml = `
+
+          let images = `
             <div class="popup-images">
-              <div><img src="${loc.image || ''}" onerror="this.src='https://picsum.photos/400/250?random=1'" alt="Location"><div class="label">Location</div></div>
-              <div><img src="${loc.movie_image || ''}" onerror="this.src='https://picsum.photos/400/250?random=2'" alt="Movie"><div class="label">Movie / Series</div></div>
-            </div>`;
+              <div><img src="${loc.image}" alt="Location"><div class="label">Location</div></div>
+              <div><img src="${loc.movie_image}" alt="Movie"><div class="label">Movie / Series</div></div>
+          `;
+          if (loc.race_image) {
+            images += `<div><img src="${loc.race_image}" alt="Race"><div class="label">Races / Events</div></div>`;
+          }
+          images += `</div>`;
+
           marker.bindPopup(`
             <div class="popup-content">
               <h3>${loc.name}</h3>
@@ -89,9 +79,9 @@
               <p class="temp">🌡️ Summer: ${loc.temp_summer} | Winter: ${loc.temp_winter}</p>
               <p class="epic">✨ ${loc.epic}</p>
               <p class="source">🎬 ${loc.source}</p>
-              ${imgHtml}
+              ${images}
             </div>
-          `, { maxWidth: 380 });
+          `, { maxWidth: 420 });
         });
       });
   </script>
