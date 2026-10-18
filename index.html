@@ -5,93 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ISLAND - Mapa Épico Interactivo</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      font-family: system-ui, -apple-system, sans-serif;
-      background: #0a1628;
-      color: #e8f0f8;
-    }
+    html, body { height: 100%; width: 100%; overflow: hidden; font-family: system-ui, sans-serif; background: #0a1628; color: #e8f0f8; }
     #map { height: 100%; width: 100%; }
-    .title-overlay {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      background: rgba(10, 22, 40, 0.9);
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: 1px solid #4a90a4;
-      max-width: 70vw;
-    }
-    .title-overlay h1 {
-      font-size: 1.4rem;
-      letter-spacing: 2px;
-      color: #c9e8ff;
-    }
+    .title-overlay { position: absolute; top: 10px; left: 10px; z-index: 1000; background: rgba(10,22,40,0.9); padding: 8px 16px; border-radius: 8px; border: 1px solid #4a90a4; max-width: 70vw; }
+    .title-overlay h1 { font-size: 1.4rem; letter-spacing: 2px; color: #c9e8ff; }
     .title-overlay p { font-size: 0.75rem; opacity: 0.8; }
-    .leaflet-popup-content-wrapper {
-      background: #0f1f33;
-      color: #e8f0f8;
-      border-radius: 10px;
-      border: 1px solid #4a90a4;
-      max-width: 92vw;
-    }
+    .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 10px; border: 1px solid #4a90a4; max-width: 92vw; }
     .leaflet-popup-tip { background: #0f1f33; }
     .popup-content { font-size: 0.9rem; }
     .popup-content h3 { color: #7ec8e3; margin: 0 0 6px 0; font-size: 1.1rem; }
     .popup-content .temp { color: #a8d5e5; font-weight: bold; margin: 4px 0; }
     .popup-content .epic { color: #ffd700; font-style: italic; margin: 4px 0; }
     .popup-content .source { color: #b8a0ff; margin: 6px 0 4px 0; font-size: 0.85rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
-    .popup-images {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .popup-images img {
-      width: 48%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid #4a90a4;
-    }
-    .popup-images .label {
-      font-size: 0.7rem;
-      text-align: center;
-      opacity: 0.8;
-      margin-top: 3px;
-    }
-    .legend {
-      position: absolute;
-      bottom: 15px;
-      right: 10px;
-      z-index: 1000;
-      background: rgba(10, 22, 40, 0.92);
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #4a90a4;
-      font-size: 0.75rem;
-      min-width: 140px;
-    }
+    .popup-images { display: flex; gap: 8px; margin-top: 10px; }
+    .popup-images img { width: 48%; height: 120px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; background: #1a2a3a; }
+    .popup-images .label { font-size: 0.7rem; text-align: center; opacity: 0.8; margin-top: 3px; }
+    .legend { position: absolute; bottom: 15px; right: 10px; z-index: 1000; background: rgba(10,22,40,0.92); padding: 10px; border-radius: 8px; border: 1px solid #4a90a4; font-size: 0.75rem; min-width: 140px; }
     .legend strong { display: block; margin-bottom: 6px; color: #c9e8ff; }
     .legend-item { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
-    .legend-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      flex-shrink: 0;
-    }
-    @media (max-width: 600px) {
-      .title-overlay h1 { font-size: 1.1rem; }
-      .popup-images img { height: 100px; }
-      .legend { font-size: 0.7rem; padding: 8px; }
-    }
+    .legend-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; flex-shrink: 0; }
+    @media (max-width: 600px) { .title-overlay h1 { font-size: 1.1rem; } .popup-images img { height: 100px; } }
   </style>
 </head>
 <body>
@@ -99,9 +38,7 @@
     <h1>ISLAND</h1>
     <p>Toca los marcadores</p>
   </div>
-
   <div id="map"></div>
-
   <div class="legend">
     <strong>Leyenda</strong>
     <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div> Ciudad</div>
@@ -111,51 +48,25 @@
   </div>
 
   <script>
-    const map = L.map('map', {
-      center: [64.9, -18.5],
-      zoom: 6,
-      minZoom: 4,
-      maxZoom: 12,
-      tap: true,
-      touchZoom: true,
-      dragging: true
-    });
-
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri',
-      maxZoom: 19
-    }).addTo(map);
+    const map = L.map('map', { center: [64.9, -18.5], zoom: 6, minZoom: 4, maxZoom: 12, tap: true });
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 19 }).addTo(map);
 
     function makeIcon(color) {
-      return L.divIcon({
-        className: '',
-        html: `<div style="background:${color};width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 6px rgba(0,0,0,0.5);"></div>`,
-        iconSize: [20, 20],
-        iconAnchor: [10, 10],
-        popupAnchor: [0, -10]
-      });
+      return L.divIcon({ className: '', html: `<div style="background:${color};width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 6px rgba(0,0,0,0.5);"></div>`, iconSize: [20,20], iconAnchor: [10,10], popupAnchor: [0,-10] });
     }
+    const icons = { city: makeIcon('#3b82f6'), glacier: makeIcon('#67e8f9'), epic: makeIcon('#fbbf24'), region: makeIcon('#34d399') };
 
-    const icons = {
-      city: makeIcon('#3b82f6'),
-      glacier: makeIcon('#67e8f9'),
-      epic: makeIcon('#fbbf24'),
-      region: makeIcon('#34d399')
-    };
-
-    fetch('data/locations.json?v=5')
+    fetch('data/locations.json?v=' + Date.now())
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
           const icon = icons[loc.type] || icons.city;
           const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
-
           const imgHtml = `
             <div class="popup-images">
-              <div><img src="${loc.image}" alt="Ubicación"><div class="label">Ubicación</div></div>
-              <div><img src="${loc.movie_image}" alt="Película"><div class="label">Película / Serie</div></div>
+              <div><img src="${loc.image || ''}" onerror="this.src='https://picsum.photos/400/250?random=1'" alt="Ubicación"><div class="label">Ubicación</div></div>
+              <div><img src="${loc.movie_image || ''}" onerror="this.src='https://picsum.photos/400/250?random=2'" alt="Película"><div class="label">Película / Serie</div></div>
             </div>`;
-
           marker.bindPopup(`
             <div class="popup-content">
               <h3>${loc.name}</h3>
@@ -167,8 +78,7 @@
             </div>
           `, { maxWidth: 380 });
         });
-      })
-      .catch(err => console.error(err));
+      });
   </script>
 </body>
 </html>
