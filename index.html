@@ -5,38 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ISLAND - Epic Interactive Map</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; width: 100%; overflow: hidden; font-family: system-ui, sans-serif; background: #0a1628; color: #e8f0f8; }
     #map { height: 100%; width: 100%; }
-    .title-overlay { position: absolute; top: 10px; left: 10px; z-index: 1000; background: rgba(10,22,40,0.9); padding: 8px 16px; border-radius: 8px; border: 1px solid #4a90a4; max-width: 70vw; }
-    .title-overlay h1 { font-size: 1.4rem; letter-spacing: 2px; color: #c9e8ff; }
-    .title-overlay p { font-size: 0.75rem; opacity: 0.8; }
+    .title-overlay {
+      position: absolute; top: 12px; left: 12px; z-index: 1000;
+      background: rgba(10,22,40,0.92); padding: 12px 20px; border-radius: 10px;
+      border: 2px solid #4a90a4; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .title-overlay h1 {
+      font-size: 2rem; letter-spacing: 6px; color: #ffffff;
+      text-shadow: 0 0 12px #4a90a4; margin: 0;
+    }
+    .title-overlay p { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
     .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 10px; border: 1px solid #4a90a4; max-width: 92vw; }
     .leaflet-popup-tip { background: #0f1f33; }
     .popup-content { font-size: 0.9rem; }
-    .popup-content h3 { color: #7ec8e3; margin: 0 0 6px 0; font-size: 1.1rem; }
-    .popup-content .temp { color: #a8d5e5; font-weight: bold; margin: 4px 0; }
+    .popup-content h3 { color: #7ec8e3; margin: 0 0 6px 0; font-size: 1.15rem; }
+    .popup-content .temp {
+      color: #7dd3fc; font-weight: bold; margin: 6px 0;
+      background: rgba(74,144,164,0.2); padding: 6px 8px; border-radius: 6px;
+    }
     .popup-content .epic { color: #ffd700; font-style: italic; margin: 4px 0; }
     .popup-content .source { color: #b8a0ff; margin: 6px 0 4px 0; font-size: 0.85rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
     .popup-images { display: flex; gap: 8px; margin-top: 10px; }
-    .popup-images img { width: 48%; height: 120px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; background: #1a2a3a; }
+    .popup-images img { width: 48%; height: 120px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; }
     .popup-images .label { font-size: 0.7rem; text-align: center; opacity: 0.8; margin-top: 3px; }
-    .legend { position: absolute; bottom: 15px; right: 10px; z-index: 1000; background: rgba(10,22,40,0.92); padding: 10px; border-radius: 8px; border: 1px solid #4a90a4; font-size: 0.75rem; min-width: 140px; }
-    .legend strong { display: block; margin-bottom: 6px; color: #c9e8ff; }
-    .legend-item { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
-    .legend-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; flex-shrink: 0; }
-    @media (max-width: 600px) { .title-overlay h1 { font-size: 1.1rem; } .popup-images img { height: 100px; } }
+    .legend {
+      position: absolute; bottom: 18px; right: 12px; z-index: 1000;
+      background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px;
+      border: 2px solid #4a90a4; font-size: 0.8rem; min-width: 150px;
+    }
+    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; font-size: 0.9rem; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+    .legend-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #fff; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .title-overlay h1 { font-size: 1.5rem; letter-spacing: 3px; }
+      .popup-images img { height: 100px; }
+    }
   </style>
 </head>
 <body>
   <div class="title-overlay">
     <h1>ISLAND</h1>
-    <p>Tap the markers</p>
+    <p>Epic Interactive Map • Tap markers</p>
   </div>
   <div id="map"></div>
   <div class="legend">
