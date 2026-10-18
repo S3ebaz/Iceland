@@ -9,9 +9,10 @@
     "temp_winter": "1–3°C",
     "description": "Black sand beach with hexagonal basalt columns (Garðar), sea caves and powerful Atlantic waves. One of the most photogenic beaches on the planet.",
     "epic": "Legendary black coast",
-    "source": "Film/TV: Rogue One (Lah'mu planet), Game of Thrones (Eastwatch). Video games: Death Stranding, Senua’s Saga: Hellblade II. Competitions: Super Jeep 4x4 and buggy expeditions to Mýrdalsjökull.",
+    "source": "Film/TV: Rogue One (Lah'mu), Game of Thrones (Eastwatch). Games: Death Stranding, Hellblade II. Competitions: Super Jeep 4x4 & buggy expeditions to Mýrdalsjökull.",
     "image": "https://picsum.photos/id/1011/500/300",
-    "movie_image": "https://picsum.photos/id/1012/500/300"
+    "movie_image": "https://picsum.photos/id/1012/500/300",
+    "race_image": "https://picsum.photos/id/1060/500/300"
   },
   {
     "id": "thingvellir",
@@ -23,7 +24,7 @@
     "temp_winter": "-1–1°C",
     "description": "Site of the tectonic fault where the North American and Eurasian plates diverge. UNESCO World Heritage Site and location of the world's first parliament (930 AD).",
     "epic": "Ancient tectonic rift",
-    "source": "Film/TV: Game of Thrones. Video games: God of War Ragnarök, Hellblade II.",
+    "source": "Film/TV: Game of Thrones. Games: God of War Ragnarök, Hellblade II.",
     "image": "https://picsum.photos/id/1040/500/300",
     "movie_image": "https://picsum.photos/id/1041/500/300"
   },
@@ -37,7 +38,7 @@
     "temp_winter": "-2–1°C",
     "description": "Glacial lagoon with blue icebergs floating toward Diamond Beach. Ancient ice formations.",
     "epic": "Ice diamond lagoon",
-    "source": "Film: James Bond (A View to a Kill, Die Another Day), Lara Croft: Tomb Raider, Interstellar, Batman Begins. Video games: Call of Duty, Asphalt 8.",
+    "source": "Film: James Bond (A View to a Kill, Die Another Day), Lara Croft, Interstellar, Batman Begins. Games: Call of Duty, Asphalt 8.",
     "image": "https://picsum.photos/id/1042/500/300",
     "movie_image": "https://picsum.photos/id/1043/500/300"
   },
@@ -51,9 +52,10 @@
     "temp_winter": "-3–0°C",
     "description": "Dettifoss is Europe's most powerful waterfall. Mývatn has craters, geysers, fumaroles and steaming lava.",
     "epic": "Epic waterfall and geothermal zone",
-    "source": "Film: Prometheus (opening), Game of Thrones (Grjótagjá). Video games: Death Stranding. Competitions: Mývatn Marathon.",
+    "source": "Film: Prometheus (opening), Game of Thrones (Grjótagjá). Games: Death Stranding. Competitions: Mývatn Marathon.",
     "image": "https://picsum.photos/id/1044/500/300",
-    "movie_image": "https://picsum.photos/id/1045/500/300"
+    "movie_image": "https://picsum.photos/id/1045/500/300",
+    "race_image": "https://picsum.photos/id/1061/500/300"
   },
   {
     "id": "akureyri",
@@ -65,9 +67,10 @@
     "temp_winter": "-2–1°C",
     "description": "Capital of the North, surrounded by Eyjafjörður fjord. Colorful houses and snow-capped mountains.",
     "epic": "Motorsport center of Iceland",
-    "source": "Film/TV: Nordic productions and extreme action. Competitions: Bíladagar (Motorsport Festival), Formula Off-Road (4x4 with +1000 HP), drag racing and drift at Akureyri Car Club.",
+    "source": "Film/TV: Nordic productions. Competitions: Bíladagar Motorsport Festival, Formula Off-Road (4x4 +1000 HP climbing vertical walls), drag racing and drift at Akureyri Car Club.",
     "image": "https://picsum.photos/id/1018/500/300",
-    "movie_image": "https://picsum.photos/id/1019/500/300"
+    "movie_image": "https://picsum.photos/id/1019/500/300",
+    "race_image": "https://picsum.photos/id/1062/500/300"
   },
   {
     "id": "skogafoss",
@@ -79,7 +82,7 @@
     "temp_winter": "1–3°C",
     "description": "Perfect 60-meter waterfall that creates double rainbows. Nearby Eyjafjallajökull glacier.",
     "epic": "Epic rainbow waterfall",
-    "source": "Film: Thor: The Dark World, The Secret Life of Walter Mitty. Video games: Spirit of the North, Assassin's Creed Valhalla.",
+    "source": "Film: Thor: The Dark World, The Secret Life of Walter Mitty. Games: Spirit of the North, Assassin's Creed Valhalla.",
     "image": "https://picsum.photos/id/1050/500/300",
     "movie_image": "https://picsum.photos/id/1051/500/300"
   },
@@ -93,7 +96,7 @@
     "temp_winter": "-2–2°C",
     "description": "Arrowhead-shaped mountain next to Kirkjufellsfoss waterfall. Iconic photographic landmark of Iceland.",
     "epic": "Legendary arrow mountain",
-    "source": "Film/TV: The Secret Life of Walter Mitty, Game of Thrones. Video games: Virtual travel simulators and adventure maps.",
+    "source": "Film/TV: The Secret Life of Walter Mitty, Game of Thrones. Games: Virtual travel simulators and adventure maps.",
     "image": "https://picsum.photos/id/1048/500/300",
     "movie_image": "https://picsum.photos/id/1049/500/300"
   },
@@ -107,7 +110,7 @@
     "temp_winter": "-2–2°C",
     "description": "Mystical glacier atop a volcano. Entrance to the Center of the Earth.",
     "epic": "Entrance to the Center of the Earth",
-    "source": "Film: Journey to the Center of the Earth (1959). Video games: Exploration adventures.",
+    "source": "Film: Journey to the Center of the Earth (1959). Games: Exploration adventures.",
     "image": "https://picsum.photos/id/1022/500/300",
     "movie_image": "https://picsum.photos/id/1023/500/300"
   },
