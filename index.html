@@ -40,7 +40,7 @@
       color: #e8f0f8;
       border-radius: 10px;
       border: 1px solid #4a90a4;
-      max-width: 90vw;
+      max-width: 92vw;
     }
     .leaflet-popup-tip { background: #0f1f33; }
     .popup-content { font-size: 0.9rem; }
@@ -50,21 +50,21 @@
     .popup-content .source { color: #b8a0ff; margin: 6px 0 4px 0; font-size: 0.85rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
     .popup-images {
       display: flex;
-      gap: 6px;
-      margin-top: 8px;
+      gap: 8px;
+      margin-top: 10px;
     }
     .popup-images img {
       width: 48%;
-      height: 70px;
+      height: 120px;
       object-fit: cover;
       border-radius: 6px;
       border: 1px solid #4a90a4;
     }
     .popup-images .label {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       text-align: center;
       opacity: 0.8;
-      margin-top: 2px;
+      margin-top: 3px;
     }
     .legend {
       position: absolute;
@@ -89,7 +89,7 @@
     }
     @media (max-width: 600px) {
       .title-overlay h1 { font-size: 1.1rem; }
-      .popup-images img { height: 60px; }
+      .popup-images img { height: 100px; }
       .legend { font-size: 0.7rem; padding: 8px; }
     }
   </style>
@@ -143,7 +143,7 @@
       region: makeIcon('#34d399')
     };
 
-    fetch('data/locations.json?v=4')
+    fetch('data/locations.json?v=5')
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
@@ -165,7 +165,7 @@
               <p class="source">🎬 ${loc.source}</p>
               ${imgHtml}
             </div>
-          `, { maxWidth: 320 });
+          `, { maxWidth: 380 });
         });
       })
       .catch(err => console.error(err));
