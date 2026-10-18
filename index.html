@@ -2,98 +2,102 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ISLAND - Mapa Épico Interactivo</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
       background: #0a1628;
       color: #e8f0f8;
-      height: 100vh;
-      overflow: hidden;
     }
-    #map { height: 100vh; width: 100%; background: #1a2a3a; }
+    #map { height: 100%; width: 100%; }
     .title-overlay {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 10px;
+      left: 10px;
       z-index: 1000;
-      background: rgba(10, 22, 40, 0.88);
-      padding: 12px 24px;
+      background: rgba(10, 22, 40, 0.9);
+      padding: 8px 16px;
       border-radius: 8px;
       border: 1px solid #4a90a4;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      max-width: 70vw;
     }
     .title-overlay h1 {
-      font-size: 2.2rem;
-      letter-spacing: 4px;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
       color: #c9e8ff;
-      text-shadow: 0 0 10px #4a90a4;
     }
-    .title-overlay p { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
+    .title-overlay p { font-size: 0.75rem; opacity: 0.8; }
     .leaflet-popup-content-wrapper {
       background: #0f1f33;
       color: #e8f0f8;
       border-radius: 10px;
       border: 1px solid #4a90a4;
-      max-width: 340px;
+      max-width: 90vw;
     }
     .leaflet-popup-tip { background: #0f1f33; }
-    .popup-content h3 { color: #7ec8e3; margin: 0 0 8px 0; }
-    .popup-content .temp { color: #a8d5e5; font-weight: bold; margin: 6px 0; }
-    .popup-content .epic { color: #ffd700; font-style: italic; margin: 6px 0; }
-    .popup-content .source { color: #b8a0ff; margin: 8px 0 4px 0; font-size: 0.9rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
+    .popup-content { font-size: 0.9rem; }
+    .popup-content h3 { color: #7ec8e3; margin: 0 0 6px 0; font-size: 1.1rem; }
+    .popup-content .temp { color: #a8d5e5; font-weight: bold; margin: 4px 0; }
+    .popup-content .epic { color: #ffd700; font-style: italic; margin: 4px 0; }
+    .popup-content .source { color: #b8a0ff; margin: 6px 0 4px 0; font-size: 0.85rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
     .popup-images {
       display: flex;
-      gap: 8px;
-      margin-top: 10px;
+      gap: 6px;
+      margin-top: 8px;
     }
     .popup-images img {
       width: 48%;
-      height: 90px;
+      height: 70px;
       object-fit: cover;
       border-radius: 6px;
       border: 1px solid #4a90a4;
     }
     .popup-images .label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       text-align: center;
       opacity: 0.8;
       margin-top: 2px;
     }
     .legend {
       position: absolute;
-      bottom: 30px;
-      right: 20px;
+      bottom: 15px;
+      right: 10px;
       z-index: 1000;
       background: rgba(10, 22, 40, 0.92);
-      padding: 14px;
+      padding: 10px;
       border-radius: 8px;
       border: 1px solid #4a90a4;
-      font-size: 0.85rem;
-      min-width: 180px;
+      font-size: 0.75rem;
+      min-width: 140px;
     }
-    .legend strong { display: block; margin-bottom: 10px; color: #c9e8ff; }
-    .legend-item { display: flex; align-items: center; gap: 10px; margin: 7px 0; }
+    .legend strong { display: block; margin-bottom: 6px; color: #c9e8ff; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
     .legend-dot {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
       border: 2px solid #fff;
       flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .title-overlay h1 { font-size: 1.1rem; }
+      .popup-images img { height: 60px; }
+      .legend { font-size: 0.7rem; padding: 8px; }
     }
   </style>
 </head>
 <body>
   <div class="title-overlay">
     <h1>ISLAND</h1>
-    <p>Mapa épico interactivo • Haz clic en los marcadores</p>
+    <p>Toca los marcadores</p>
   </div>
 
   <div id="map"></div>
@@ -107,12 +111,14 @@
   </div>
 
   <script>
-    // v3 - colored icons + images
     const map = L.map('map', {
       center: [64.9, -18.5],
       zoom: 6,
-      minZoom: 5,
-      maxZoom: 12
+      minZoom: 4,
+      maxZoom: 12,
+      tap: true,
+      touchZoom: true,
+      dragging: true
     });
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -123,10 +129,10 @@
     function makeIcon(color) {
       return L.divIcon({
         className: '',
-        html: `<div style="background:${color};width:22px;height:22px;border-radius:50%;border:3px solid white;box-shadow:0 0 8px rgba(0,0,0,0.6);"></div>`,
-        iconSize: [22, 22],
-        iconAnchor: [11, 11],
-        popupAnchor: [0, -12]
+        html: `<div style="background:${color};width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 6px rgba(0,0,0,0.5);"></div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+        popupAnchor: [0, -10]
       });
     }
 
@@ -137,29 +143,29 @@
       region: makeIcon('#34d399')
     };
 
-    fetch('data/locations.json?v=3')
+    fetch('data/locations.json?v=4')
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
           const icon = icons[loc.type] || icons.city;
           const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
 
-          const imgHtml = (loc.image || loc.movie_image) ? `
+          const imgHtml = `
             <div class="popup-images">
-              ${loc.image ? `<div><img src="${loc.image}" alt="Ubicación" onerror="this.style.display='none'"><div class="label">Ubicación</div></div>` : ''}
-              ${loc.movie_image ? `<div><img src="${loc.movie_image}" alt="Película" onerror="this.style.display='none'"><div class="label">Película / Serie</div></div>` : ''}
-            </div>` : '';
+              <div><img src="${loc.image}" alt="Ubicación"><div class="label">Ubicación</div></div>
+              <div><img src="${loc.movie_image}" alt="Película"><div class="label">Película / Serie</div></div>
+            </div>`;
 
           marker.bindPopup(`
             <div class="popup-content">
               <h3>${loc.name}</h3>
               <p>${loc.description}</p>
               <p class="temp">🌡️ Verano: ${loc.temp_summer} | Invierno: ${loc.temp_winter}</p>
-              ${loc.epic ? `<p class="epic">✨ ${loc.epic}</p>` : ''}
-              ${loc.source ? `<p class="source">🎬 ${loc.source}</p>` : ''}
+              <p class="epic">✨ ${loc.epic}</p>
+              <p class="source">🎬 ${loc.source}</p>
               ${imgHtml}
             </div>
-          `);
+          `, { maxWidth: 320 });
         });
       })
       .catch(err => console.error(err));
