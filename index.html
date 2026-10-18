@@ -21,7 +21,7 @@
       top: 20px;
       left: 20px;
       z-index: 1000;
-      background: rgba(10, 22, 40, 0.85);
+      background: rgba(10, 22, 40, 0.88);
       padding: 12px 24px;
       border-radius: 8px;
       border: 1px solid #4a90a4;
@@ -33,23 +33,37 @@
       color: #c9e8ff;
       text-shadow: 0 0 10px #4a90a4;
     }
-    .title-overlay p {
-      font-size: 0.85rem;
-      opacity: 0.8;
-      margin-top: 4px;
-    }
+    .title-overlay p { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
     .leaflet-popup-content-wrapper {
       background: #0f1f33;
       color: #e8f0f8;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #4a90a4;
-      max-width: 320px;
+      max-width: 340px;
     }
     .leaflet-popup-tip { background: #0f1f33; }
-    .popup-content h3 { color: #7ec8e3; margin-bottom: 8px; }
-    .popup-content .temp { color: #a8d5e5; font-weight: bold; }
-    .popup-content .epic { color: #ffd700; font-style: italic; margin-top: 6px; }
-    .popup-content .source { color: #b8a0ff; margin-top: 8px; font-size: 0.9rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
+    .popup-content h3 { color: #7ec8e3; margin: 0 0 8px 0; }
+    .popup-content .temp { color: #a8d5e5; font-weight: bold; margin: 6px 0; }
+    .popup-content .epic { color: #ffd700; font-style: italic; margin: 6px 0; }
+    .popup-content .source { color: #b8a0ff; margin: 8px 0 4px 0; font-size: 0.9rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
+    .popup-images {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .popup-images img {
+      width: 48%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #4a90a4;
+    }
+    .popup-images .label {
+      font-size: 0.7rem;
+      text-align: center;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
     .legend {
       position: absolute;
       bottom: 30px;
@@ -60,10 +74,17 @@
       border-radius: 8px;
       border: 1px solid #4a90a4;
       font-size: 0.85rem;
-      min-width: 160px;
+      min-width: 180px;
     }
-    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; }
-    .legend div { margin: 6px 0; display: flex; align-items: center; gap: 8px; }
+    .legend strong { display: block; margin-bottom: 10px; color: #c9e8ff; }
+    .legend-item { display: flex; align-items: center; gap: 10px; margin: 7px 0; }
+    .legend-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -76,10 +97,10 @@
 
   <div class="legend">
     <strong>Leyenda</strong>
-    <div>🏢 Ciudad</div>
-    <div>❄️ Glaciar</div>
-    <div>⚡ Punto épico / Película o juego</div>
-    <div>🌊 Región</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div> Ciudad</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#67e8f9;"></div> Glaciar</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> Punto épico</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> Región</div>
   </div>
 
   <script>
@@ -90,36 +111,54 @@
       maxZoom: 12
     });
 
-    // Esri World Imagery - satelital gratis y confiable
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+      attribution: 'Tiles &copy; Esri',
       maxZoom: 19
     }).addTo(map);
 
-    // Cargar locaciones
+    function makeIcon(color) {
+      return L.divIcon({
+        className: '',
+        html: `<div style="background:${color};width:22px;height:22px;border-radius:50%;border:3px solid white;box-shadow:0 0 8px rgba(0,0,0,0.6);"></div>`,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -12]
+      });
+    }
+
+    const icons = {
+      city: makeIcon('#3b82f6'),
+      glacier: makeIcon('#67e8f9'),
+      epic: makeIcon('#fbbf24'),
+      region: makeIcon('#34d399')
+    };
+
     fetch('data/locations.json')
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
-          let iconEmoji = '📍';
-          if (loc.type === 'city') iconEmoji = '🏢';
-          if (loc.type === 'glacier') iconEmoji = '❄️';
-          if (loc.type === 'epic') iconEmoji = '⚡';
-          if (loc.type === 'region') iconEmoji = '🌊';
+          const icon = icons[loc.type] || icons.city;
+          const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
 
-          const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+          const imgHtml = (loc.image || loc.movie_image) ? `
+            <div class="popup-images">
+              ${loc.image ? `<div><img src="${loc.image}" alt="Ubicación"><div class="label">Ubicación</div></div>` : ''}
+              ${loc.movie_image ? `<div><img src="${loc.movie_image}" alt="Película"><div class="label">Película / Serie</div></div>` : ''}
+            </div>` : '';
+
           marker.bindPopup(`
             <div class="popup-content">
-              <h3>${iconEmoji} ${loc.name}</h3>
+              <h3>${loc.name}</h3>
               <p>${loc.description}</p>
               <p class="temp">🌡️ Verano: ${loc.temp_summer} | Invierno: ${loc.temp_winter}</p>
               ${loc.epic ? `<p class="epic">✨ ${loc.epic}</p>` : ''}
               ${loc.source ? `<p class="source">🎬 ${loc.source}</p>` : ''}
+              ${imgHtml}
             </div>
           `);
         });
       })
-      .catch(err => console.error('Error cargando locaciones:', err));
+      .catch(err => console.error(err));
   </script>
 </body>
 </html>
