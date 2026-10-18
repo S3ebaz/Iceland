@@ -10,8 +10,8 @@
     "description": "Capital de Islandia. Centro de energía geotérmica, pesca y cultura.",
     "epic": "Base de operaciones épica",
     "source": "The Secret Life of Walter Mitty y producciones modernas",
-    "image": "https://picsum.photos/id/1015/400/250",
-    "movie_image": "https://picsum.photos/id/1016/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Reykjavik_from_Hallgr%C3%ADmskirkja_tower.jpg/640px-Reykjavik_from_Hallgr%C3%ADmskirkja_tower.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/The_Secret_Life_of_Walter_Mitty_poster.jpg/220px-The_Secret_Life_of_Walter_Mitty_poster.jpg"
   },
   {
     "id": "akureyri",
@@ -24,8 +24,8 @@
     "description": "Capital del Norte. Avistamiento de ballenas y fiordos.",
     "epic": "Puerto del Norte",
     "source": "Documentales nórdicos y paisajes de fiordos",
-    "image": "https://picsum.photos/id/1018/400/250",
-    "movie_image": "https://picsum.photos/id/1019/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Akureyri.jpg/640px-Akureyri.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Eyjafj%C3%B6r%C3%B0ur_from_Akureyri.jpg/640px-Eyjafj%C3%B6r%C3%B0ur_from_Akureyri.jpg"
   },
   {
     "id": "vatnajokull",
@@ -38,8 +38,8 @@
     "description": "El glaciar más grande de Europa. Hielo cristalino y volcanes subglaciales.",
     "epic": "Fortaleza de hielo ancestral",
     "source": "Game of Thrones / Interstellar (estética glacial)",
-    "image": "https://picsum.photos/id/1020/400/250",
-    "movie_image": "https://picsum.photos/id/1021/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Vatnaj%C3%B6kull_glacier.jpg/640px-Vatnaj%C3%B6kull_glacier.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Game_of_Thrones_title_card.jpg/220px-Game_of_Thrones_title_card.jpg"
   },
   {
     "id": "snaefellsjokull",
@@ -52,8 +52,8 @@
     "description": "Glaciar místico sobre un volcán. Entrada al Centro de la Tierra.",
     "epic": "Entrada al Centro de la Tierra",
     "source": "Viaje al Centro de la Tierra (Julio Verne / película 1959)",
-    "image": "https://picsum.photos/id/1022/400/250",
-    "movie_image": "https://picsum.photos/id/1023/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sn%C3%A6fellsj%C3%B6kull.jpg/640px-Sn%C3%A6fellsj%C3%B6kull.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Journey_to_the_Center_of_the_Earth_%281959_film%29.jpg/220px-Journey_to_the_Center_of_the_Earth_%281959_film%29.jpg"
   },
   {
     "id": "myrdalsjokull",
@@ -66,8 +66,8 @@
     "description": "Glaciar que cubre el volcán Katla. Cuevas de hielo cerca de Vík.",
     "epic": "Cueva mística de hielo",
     "source": "Cuevas de hielo y Katla en documentales y aventuras",
-    "image": "https://picsum.photos/id/1024/400/250",
-    "movie_image": "https://picsum.photos/id/1025/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/M%C3%BDrdalsj%C3%B6kull.jpg/640px-M%C3%BDrdalsj%C3%B6kull.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ice_cave.jpg/640px-Ice_cave.jpg"
   },
   {
     "id": "westfjords",
@@ -80,8 +80,8 @@
     "description": "Fiordos salvajes, acantilados de aves y faros antiguos.",
     "epic": "Reino de los Fiordos",
     "source": "The Northman (2022) y estética vikinga / Assassin's Creed Valhalla",
-    "image": "https://picsum.photos/id/1026/400/250",
-    "movie_image": "https://picsum.photos/id/1027/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Westfjords.jpg/640px-Westfjords.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/The_Northman_poster.jpg/220px-The_Northman_poster.jpg"
   },
   {
     "id": "vik",
@@ -94,8 +94,8 @@
     "description": "Pueblo costero del sur de Islandia. Base para explorar la costa negra.",
     "epic": "Pueblo de la costa sur",
     "source": "Punto de partida en muchas producciones rodadas en el sur de Islandia",
-    "image": "https://picsum.photos/id/1028/400/250",
-    "movie_image": "https://picsum.photos/id/1029/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Vik_Iceland.jpg/640px-Vik_Iceland.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Reynisfjara_and_Reynisdrangar%2C_Iceland.jpg/640px-Reynisfjara_and_Reynisdrangar%2C_Iceland.jpg"
   },
   {
     "id": "reynisfjara",
@@ -107,9 +107,9 @@
     "temp_winter": "1–3°C",
     "description": "Playa de arena negra épica con columnas de basalto y los stacks marinos Reynisdrangar.",
     "epic": "Costa negra legendaria",
-    "source": "Game of Thrones (Eastwatch), Prometheus, Rogue One, Interstellar, Star Trek Into Darkness",
-    "image": "https://picsum.photos/id/1030/400/250",
-    "movie_image": "https://picsum.photos/id/1033/400/250"
+    "source": "Game of Thrones (Eastwatch), Prometheus, Rogue One, Interstellar",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Reynisfjara_and_Reynisdrangar%2C_Iceland.jpg/800px-Reynisfjara_and_Reynisdrangar%2C_Iceland.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Game_of_Thrones_Season_7.jpg/220px-Game_of_Thrones_Season_7.jpg"
   },
   {
     "id": "hofn",
@@ -122,7 +122,7 @@
     "description": "Puerta de entrada a Vatnajökull. Vistas al glaciar y pesca.",
     "epic": "Vigilante del Glaciar",
     "source": "Base de exploración glacial en documentales épicos",
-    "image": "https://picsum.photos/id/1031/400/250",
-    "movie_image": "https://picsum.photos/id/1032/400/250"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Hofn_Iceland.jpg/640px-Hofn_Iceland.jpg",
+    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Vatnaj%C3%B6kull.jpg/640px-Vatnaj%C3%B6kull.jpg"
   }
 ]
