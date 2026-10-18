@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISLAND - Mapa Épico Interactivo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0a1628;
+      color: #e8f0f8;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #map { height: 100vh; width: 100%; }
+    .title-overlay {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: rgba(10, 22, 40, 0.85);
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid #4a90a4;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+    .title-overlay h1 {
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      color: #c9e8ff;
+      text-shadow: 0 0 10px #4a90a4;
+    }
+    .title-overlay p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+    .leaflet-popup-content-wrapper {
+      background: #0f1f33;
+      color: #e8f0f8;
+      border-radius: 8px;
+      border: 1px solid #4a90a4;
+    }
+    .leaflet-popup-tip { background: #0f1f33; }
+    .popup-content h3 { color: #7ec8e3; margin-bottom: 8px; }
+    .popup-content .temp { color: #a8d5e5; font-weight: bold; }
+    .popup-content .epic { color: #ffd700; font-style: italic; margin-top: 6px; }
+    .legend {
+      position: absolute;
+      bottom: 30px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(10, 22, 40, 0.9);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #4a90a4;
+      font-size: 0.8rem;
+    }
+    .legend div { margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <div class="title-overlay">
+    <h1>ISLAND</h1>
+    <p>Mapa épico interactivo • Haz clic en los marcadores</p>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="legend">
+    <strong>Leyenda</strong><br>
+    <div>🏢 Ciudad</div>
+    <div>❄️ Glaciar</div>
+    <div>⚡ Punto épico</div>
+    <div>🌊 Región</div>
+  </div>
+
+  <script>
+    const map = L.map('map').setView([64.9, -18.5], 6);
+
+    // Estilo oscuro épico
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Cargar locaciones
+    fetch('data/locations.json')
+      .then(r => r.json())
+      .then(locations => {
+        locations.forEach(loc => {
+          let iconEmoji = '📍';
+          if (loc.type === 'city') iconEmoji = '🏢';
+          if (loc.type === 'glacier') iconEmoji = '❄️';
+          if (loc.type === 'epic') iconEmoji = '⚡';
+          if (loc.type === 'region') iconEmoji = '🌊';
+
+          const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+          marker.bindPopup(`
+            <div class="popup-content">
+              <h3>${iconEmoji} ${loc.name}</h3>
+              <p>${loc.description}</p>
+              <p class="temp">🌡️ Verano: ${loc.temp_summer} | Invierno: ${loc.temp_winter}</p>
+              ${loc.epic ? `<p class="epic">✨ ${loc.epic}</p>` : ''}
+            </div>
+          `);
+        });
+      })
+      .catch(err => console.error('Error cargando locaciones:', err));
+  </script>
+</body>
+</html>
