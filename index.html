@@ -43,23 +43,27 @@
       color: #e8f0f8;
       border-radius: 8px;
       border: 1px solid #4a90a4;
+      max-width: 320px;
     }
     .leaflet-popup-tip { background: #0f1f33; }
     .popup-content h3 { color: #7ec8e3; margin-bottom: 8px; }
     .popup-content .temp { color: #a8d5e5; font-weight: bold; }
     .popup-content .epic { color: #ffd700; font-style: italic; margin-top: 6px; }
+    .popup-content .source { color: #b8a0ff; margin-top: 8px; font-size: 0.9rem; border-top: 1px solid #4a90a4; padding-top: 6px; }
     .legend {
       position: absolute;
       bottom: 30px;
       right: 20px;
       z-index: 1000;
-      background: rgba(10, 22, 40, 0.9);
-      padding: 12px;
+      background: rgba(10, 22, 40, 0.92);
+      padding: 14px;
       border-radius: 8px;
       border: 1px solid #4a90a4;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
+      min-width: 160px;
     }
-    .legend div { margin: 4px 0; }
+    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; }
+    .legend div { margin: 6px 0; display: flex; align-items: center; gap: 8px; }
   </style>
 </head>
 <body>
@@ -71,10 +75,10 @@
   <div id="map"></div>
 
   <div class="legend">
-    <strong>Leyenda</strong><br>
+    <strong>Leyenda</strong>
     <div>🏢 Ciudad</div>
     <div>❄️ Glaciar</div>
-    <div>⚡ Punto épico</div>
+    <div>⚡ Punto épico / Película o juego</div>
     <div>🌊 Región</div>
   </div>
 
@@ -86,7 +90,7 @@
       maxZoom: 12
     });
 
-    // Esri World Imagery - satelital gratis y confiable (sin API key)
+    // Esri World Imagery - satelital gratis y confiable
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
       maxZoom: 19
@@ -110,6 +114,7 @@
               <p>${loc.description}</p>
               <p class="temp">🌡️ Verano: ${loc.temp_summer} | Invierno: ${loc.temp_winter}</p>
               ${loc.epic ? `<p class="epic">✨ ${loc.epic}</p>` : ''}
+              ${loc.source ? `<p class="source">🎬 ${loc.source}</p>` : ''}
             </div>
           `);
         });
