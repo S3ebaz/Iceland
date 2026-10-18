@@ -8,7 +8,8 @@
     "temp_summer": "12–15°C",
     "temp_winter": "0–2°C",
     "description": "Capital de Islandia. Centro de energía geotérmica, pesca y cultura. Aurora boreal visible en invierno.",
-    "epic": "Base de operaciones épica"
+    "epic": "Base de operaciones épica",
+    "source": "Películas modernas y series rodadas en Islandia (ej. The Secret Life of Walter Mitty)"
   },
   {
     "id": "akureyri",
@@ -19,7 +20,8 @@
     "temp_summer": "11–14°C",
     "temp_winter": "-2–1°C",
     "description": "Capital del Norte. Avistamiento de ballenas, fiordos y puerta a las tierras altas.",
-    "epic": "Puerto del Norte"
+    "epic": "Puerto del Norte",
+    "source": "Paisajes de fiordos usados en producciones nórdicas y documentales épicos"
   },
   {
     "id": "vatnajokull",
@@ -30,7 +32,8 @@
     "temp_summer": "5–10°C",
     "temp_winter": "-5–0°C",
     "description": "El glaciar más grande de Europa. Cubierto de hielo cristalino, volcanes subglaciales y cuevas de hielo.",
-    "epic": "Fortaleza de hielo ancestral"
+    "epic": "Fortaleza de hielo ancestral",
+    "source": "Inspiración visual para Game of Thrones (más allá del Muro), Interstellar y juegos de exploración glacial"
   },
   {
     "id": "snaefellsjokull",
@@ -41,7 +44,8 @@
     "temp_summer": "8–12°C",
     "temp_winter": "-2–2°C",
     "description": "Glaciar místico sobre un volcán. Inspiró 'Viaje al Centro de la Tierra' de Julio Verne.",
-    "epic": "Entrada al Centro de la Tierra"
+    "epic": "Entrada al Centro de la Tierra",
+    "source": "Viaje al Centro de la Tierra (Julio Verne / películas 1959 y 2008)"
   },
   {
     "id": "myrdalsjokull",
@@ -52,7 +56,8 @@
     "temp_summer": "6–11°C",
     "temp_winter": "-4–0°C",
     "description": "Glaciar que cubre el volcán Katla. Cuevas de hielo y paisajes de otro mundo cerca de Vík.",
-    "epic": "Cueva mística de hielo"
+    "epic": "Cueva mística de hielo",
+    "source": "Cuevas de hielo y volcanes subglaciales en documentales y juegos de supervivencia (Katla)"
   },
   {
     "id": "westfjords",
@@ -63,7 +68,8 @@
     "temp_summer": "8–12°C",
     "temp_winter": "-4–0°C",
     "description": "Fiordos salvajes, acantilados de aves, cascadas y faros antiguos. Una de las zonas más dramáticas de Islandia.",
-    "epic": "Reino de los Fiordos"
+    "epic": "Reino de los Fiordos",
+    "source": "The Northman (2022), películas vikingas y Assassin's Creed Valhalla (estética nórdica)"
   },
   {
     "id": "vik",
@@ -74,7 +80,8 @@
     "temp_summer": "10–13°C",
     "temp_winter": "1–3°C",
     "description": "Pueblo costero con la playa de arena negra Reynisfjara y formaciones de basalto épicas.",
-    "epic": "Costa negra legendaria"
+    "epic": "Costa negra legendaria",
+    "source": "Playa de arena negra usada en Prometheus, Oblivion y muchas producciones de ciencia ficción"
   },
   {
     "id": "hofn",
@@ -85,6 +92,19 @@
     "temp_summer": "9–12°C",
     "temp_winter": "0–2°C",
     "description": "Puerta de entrada a Vatnajökull. Pesca y vistas impresionantes al glaciar.",
-    "epic": "Vigilante del Glaciar"
+    "epic": "Vigilante del Glaciar",
+    "source": "Base de exploración glacial en documentales y aventuras cinematográficas"
+  },
+  {
+    "id": "drangajokull",
+    "name": "Drangajökull",
+    "type": "epic",
+    "lat": 66.15,
+    "lng": -22.25,
+    "temp_summer": "6–10°C",
+    "temp_winter": "-6–-2°C",
+    "description": "Glaciar remoto en los Westfjords. Paisajes extremos y aislados.",
+    "epic": "Faro antiguo y ruinas ocultas",
+    "source": "Estética de faros y ruinas en películas de misterio y juegos de exploración"
   }
 ]
