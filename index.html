@@ -49,7 +49,7 @@
   </div>
 
   <script>
-    // FORCE UPDATE v13 - fun icons + real Formula Off-Road
+    // FORCE UPDATE v14 - 15 locations with verified images
     const map = L.map('map', { center: [64.9, -18.5], zoom: 6, minZoom: 4, maxZoom: 12, tap: true });
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 19 }).addTo(map);
 
@@ -70,7 +70,7 @@
       region: makeEmojiIcon('🏁')
     };
 
-    fetch('data/locations.json?force=13&t=' + Date.now())
+    fetch('data/locations.json?force=14&t=' + Date.now())
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
