@@ -7,11 +7,11 @@
     "lng": -19.071,
     "temp_summer": "10–13°C",
     "temp_winter": "1–3°C",
-    "description": "Black sand beach with hexagonal basalt columns, sea caves and powerful Atlantic waves. One of the most photogenic beaches on the planet.",
+    "description": "Black sand beach with hexagonal basalt columns, sea caves and powerful Atlantic waves.",
     "epic": "Legendary black coast",
     "source": "Film/TV: Game of Thrones, Rogue One. Games: Death Stranding, Hellblade II.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Reynisfjara_Black_Sand_Beach%2C_Iceland_%28Unsplash%29.jpg",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Reynisfjara_and_Reynisdrangar%2C_Iceland.jpg/1280px-Reynisfjara_and_Reynisdrangar%2C_Iceland.jpg"
+    "image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "thingvellir",
@@ -21,11 +21,11 @@
     "lng": -21.129,
     "temp_summer": "11–14°C",
     "temp_winter": "-1–1°C",
-    "description": "UNESCO site where North American and Eurasian tectonic plates pull apart. Site of the ancient Althing parliament (930 AD).",
+    "description": "UNESCO site where North American and Eurasian tectonic plates pull apart.",
     "epic": "Ancient tectonic rift",
     "source": "Film/TV: Game of Thrones. Games: God of War Ragnarök, Hellblade II.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Thingvellir%2C_Iceland_%28Unsplash%29.jpg/1280px-Thingvellir%2C_Iceland_%28Unsplash%29.jpg",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Thingvellir.jpg/1280px-Thingvellir.jpg"
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "jokulsarlon",
@@ -35,11 +35,11 @@
     "lng": -16.179,
     "temp_summer": "8–12°C",
     "temp_winter": "-2–1°C",
-    "description": "Glacial lagoon filled with blue icebergs that drift toward the black sand of Diamond Beach.",
+    "description": "Glacial lagoon filled with blue icebergs that drift toward Diamond Beach.",
     "epic": "Ice diamond lagoon",
-    "source": "Film: Batman Begins, Die Another Day, Interstellar. Games: Call of Duty.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/J%C3%B6kuls%C3%A1rl%C3%B3n_Glacial_lagoon_with_icebergs.JPG/1280px-J%C3%B6kuls%C3%A1rl%C3%B3n_Glacial_lagoon_with_icebergs.JPG",
-    "movie_image": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=600&h=400&fit=crop&q=80"
+    "source": "Film: Batman Begins, Die Another Day, Interstellar.",
+    "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "dettifoss",
@@ -49,11 +49,11 @@
     "lng": -16.384,
     "temp_summer": "9–13°C",
     "temp_winter": "-3–0°C",
-    "description": "Europe’s most powerful waterfall by volume. 100 m wide, 44 m drop into a dramatic canyon.",
+    "description": "Europe’s most powerful waterfall by volume. 100 m wide, 44 m drop.",
     "epic": "Prometheus opening scene",
-    "source": "Film: Prometheus (2012) opening – Engineer sacrifice. Games: Death Stranding.",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=600&h=400&fit=crop&q=80",
-    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+    "source": "Film: Prometheus (2012) opening sequence.",
+    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "akureyri",
@@ -63,11 +63,11 @@
     "lng": -18.0878,
     "temp_summer": "11–14°C",
     "temp_winter": "-2–1°C",
-    "description": "Capital of the North. Home of Bíladagar festival and extreme Formula Off-Road hill climbs at Akureyri Car Club.",
+    "description": "Capital of the North. Home of Bíladagar and extreme Formula Off-Road hill climbs.",
     "epic": "Motorsport center of Iceland",
-    "source": "Competitions: Bíladagar, Formula Off-Road (4x4 climbing near-vertical walls).",
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop&q=80",
-    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
+    "source": "Competitions: Bíladagar, Formula Off-Road.",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80",
     "race_image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Formula-offroad-truck-driving-up-slope.jpg"
   },
   {
@@ -78,11 +78,11 @@
     "lng": -19.511,
     "temp_summer": "10–13°C",
     "temp_winter": "1–3°C",
-    "description": "Perfect 60 m high and 25 m wide waterfall. Mist often creates double rainbows at the base.",
+    "description": "Perfect 60 m high waterfall. Mist often creates rainbows at the base.",
     "epic": "Epic rainbow waterfall",
-    "source": "Film: Thor: The Dark World, The Secret Life of Walter Mitty. Games: Assassin's Creed Valhalla.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Skogafoss%2C_Iceland_%28Unsplash%29.jpg/1280px-Skogafoss%2C_Iceland_%28Unsplash%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=600&h=400&fit=crop&q=80"
+    "source": "Film: Thor: The Dark World, The Secret Life of Walter Mitty.",
+    "image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "kirkjufell",
@@ -92,11 +92,11 @@
     "lng": -23.307,
     "temp_summer": "8–12°C",
     "temp_winter": "-2–2°C",
-    "description": "Iconic free-standing arrowhead mountain (463 m) with the nearby Kirkjufellsfoss waterfall. One of Iceland’s most photographed landmarks.",
+    "description": "Iconic arrowhead mountain (463 m) with the nearby Kirkjufellsfoss waterfall.",
     "epic": "Arrowhead Mountain – Game of Thrones",
-    "source": "Film/TV: Game of Thrones (Seasons 6–7), The Secret Life of Walter Mitty.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kirkjufell_mountain_%28Unsplash%29.jpg/1280px-Kirkjufell_mountain_%28Unsplash%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=600&h=400&fit=crop&q=80"
+    "source": "Film/TV: Game of Thrones (Seasons 6–7).",
+    "image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "grjotagja",
@@ -106,11 +106,11 @@
     "lng": -16.880,
     "temp_summer": "9–13°C",
     "temp_winter": "-3–0°C",
-    "description": "Lava cave with a brilliant blue geothermal pool inside. Famous Game of Thrones filming location near Mývatn.",
+    "description": "Lava cave with a brilliant blue geothermal pool. Famous Game of Thrones location.",
     "epic": "Game of Thrones – Jon & Ygritte cave",
-    "source": "Film/TV: Game of Thrones Season 3 (Kissed by Fire).",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Grjotagja_cave_Iceland_1.JPG/1280px-Grjotagja_cave_Iceland_1.JPG",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Grj%C3%B3tagj%C3%A1.JPG/1280px-Grj%C3%B3tagj%C3%A1.JPG"
+    "source": "Film/TV: Game of Thrones Season 3.",
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "kerid",
@@ -120,11 +120,11 @@
     "lng": -20.885,
     "temp_summer": "10–14°C",
     "temp_winter": "-1–2°C",
-    "description": "Volcanic crater with turquoise lake and striking red scoria walls. Part of the Golden Circle area.",
+    "description": "Volcanic crater with turquoise lake and striking red scoria walls.",
     "epic": "Colorful volcanic caldera",
-    "source": "Travel & nature documentaries. Games: virtual exploration.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Keri%C3%B0_volcanic_crater%2C_Iceland%2C_20230502_1533_4283.jpg/1280px-Keri%C3%B0_volcanic_crater%2C_Iceland%2C_20230502_1533_4283.jpg",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Crater_volc%C3%A1nico_Keri%C3%B0%2C_Su%C3%B0urland%2C_Islandia%2C_2014-08-16%2C_DD_143.JPG/1280px-Crater_volc%C3%A1nico_Keri%C3%B0%2C_Su%C3%B0urland%2C_Islandia%2C_2014-08-16%2C_DD_143.JPG"
+    "source": "Travel & nature documentaries.",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "studlagil",
@@ -134,11 +134,11 @@
     "lng": -15.307,
     "temp_summer": "8–12°C",
     "temp_winter": "-4–0°C",
-    "description": "Dramatic canyon of towering hexagonal basalt columns surrounding a vivid turquoise river in East Iceland.",
+    "description": "Dramatic canyon of hexagonal basalt columns surrounding a turquoise river.",
     "epic": "Basalt column cathedral",
-    "source": "Nature & travel photography. Instagram landmark.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Stu%C3%B0lagil_canyon_jokuldalur_iceland-12.jpg/1280px-Stu%C3%B0lagil_canyon_jokuldalur_iceland-12.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+    "source": "Nature & travel photography.",
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "seljalandsfoss",
@@ -148,11 +148,11 @@
     "lng": -19.988,
     "temp_summer": "10–13°C",
     "temp_winter": "1–3°C",
-    "description": "60 m waterfall you can walk behind. Fed by meltwater from Eyjafjallajökull glacier.",
+    "description": "60 m waterfall you can walk behind. Fed by Eyjafjallajökull meltwater.",
     "epic": "Walk-behind waterfall",
-    "source": "Film: The Juniper Tree (with Björk). Travel documentaries.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seljalandsfoss_Waterfall.jpg/1280px-Seljalandsfoss_Waterfall.jpg",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Seljalandsfoss_waterfall_in_motion_%28Unsplash%29.jpg/1280px-Seljalandsfoss_waterfall_in_motion_%28Unsplash%29.jpg"
+    "source": "Film: The Juniper Tree (with Björk).",
+    "image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "strokkur",
@@ -162,11 +162,11 @@
     "lng": -20.300,
     "temp_summer": "10–14°C",
     "temp_winter": "-2–1°C",
-    "description": "Geothermal area with the reliable Strokkur geyser erupting every 6–10 minutes and the famous Geysir.",
+    "description": "Geothermal area with the reliable Strokkur geyser erupting every 6–10 minutes.",
     "epic": "Active geyser field",
     "source": "Nature documentaries. Golden Circle classic.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Fountain_geyser_Strokkur%2C_Haukadalur%2C_Iceland.JPG/1280px-Fountain_geyser_Strokkur%2C_Haukadalur%2C_Iceland.JPG",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Geysir_Strokkur.JPG/1280px-Geysir_Strokkur.JPG"
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "snaefellsjokull",
@@ -176,11 +176,11 @@
     "lng": -23.7711,
     "temp_summer": "8–12°C",
     "temp_winter": "-2–2°C",
-    "description": "Glacier-capped stratovolcano at the tip of Snæfellsnes. Inspiration for Jules Verne’s Journey to the Center of the Earth.",
+    "description": "Glacier-capped stratovolcano. Inspiration for Journey to the Center of the Earth.",
     "epic": "Entrance to the Center of the Earth",
-    "source": "Literature: Journey to the Center of the Earth (Jules Verne). Films & games.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Sn%C3%A6fellsj%C3%B6kull_2024_%280759%29.jpg/1280px-Sn%C3%A6fellsj%C3%B6kull_2024_%280759%29.jpg",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Snaefellsj%C3%B6kull.jpg/1280px-Snaefellsj%C3%B6kull.jpg"
+    "source": "Literature: Jules Verne. Films & games.",
+    "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "vatnajokull",
@@ -190,11 +190,11 @@
     "lng": -16.8,
     "temp_summer": "5–10°C",
     "temp_winter": "-5–0°C",
-    "description": "Europe’s largest ice cap by volume. Home to ice caves, outlet glaciers and dramatic landscapes.",
+    "description": "Europe’s largest ice cap by volume. Home to ice caves and outlet glaciers.",
     "epic": "Ancient ice fortress",
-    "source": "Film: Game of Thrones, Interstellar. Nature documentaries.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Vatnaj%C3%B6kull_Glacier%2C_Iceland_%28Unsplash%29.jpg/1280px-Vatnaj%C3%B6kull_Glacier%2C_Iceland_%28Unsplash%29.jpg",
-    "movie_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Vatnaj%C3%B6kull.JPG/1280px-Vatnaj%C3%B6kull.JPG"
+    "source": "Film: Game of Thrones, Interstellar.",
+    "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "reykjavik",
@@ -204,10 +204,10 @@
     "lng": -21.9426,
     "temp_summer": "12–15°C",
     "temp_winter": "0–2°C",
-    "description": "Capital and largest city of Iceland. Colorful houses, Hallgrímskirkja, Harpa and the start of the Ring Road.",
+    "description": "Capital of Iceland. Colorful houses, Hallgrímskirkja and the start of the Ring Road.",
     "epic": "Epic base of operations",
     "source": "Various films and modern productions.",
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop&q=80",
-    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   }
 ]
