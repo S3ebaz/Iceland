@@ -27,51 +27,63 @@
     .popup-images > div { width: 48%; }
     .popup-images img { width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; }
     .popup-images .label { font-size: 0.65rem; text-align: center; opacity: 0.85; margin-top: 2px; }
-    .legend { position: absolute; bottom: 18px; right: 12px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px; border: 2px solid #4a90a4; font-size: 0.8rem; min-width: 150px; }
+    .legend { position: absolute; bottom: 18px; right: 12px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px; border: 2px solid #4a90a4; font-size: 0.85rem; min-width: 170px; }
     .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; }
     .legend-item { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
-    .legend-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #fff; flex-shrink: 0; }
+    .legend-emoji { font-size: 1.3rem; }
     @media (max-width: 600px) { .title-overlay h1 { font-size: 1.5rem; } .popup-images img { height: 90px; } }
   </style>
 </head>
 <body>
   <div class="title-overlay">
     <h1>ISLAND</h1>
-    <p>Epic Interactive Map • Tap markers</p>
+    <p>Epic Interactive Map • Tap markers 🎮</p>
   </div>
   <div id="map"></div>
   <div class="legend">
-    <strong>Legend</strong>
-    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div> City</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#67e8f9;"></div> Glacier</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> Epic Point</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> Region</div>
+    <strong>Legend 🗺️</strong>
+    <div class="legend-item"><span class="legend-emoji">🏙️</span> City</div>
+    <div class="legend-item"><span class="legend-emoji">❄️</span> Glacier</div>
+    <div class="legend-item"><span class="legend-emoji">⭐</span> Epic Point</div>
+    <div class="legend-item"><span class="legend-emoji">🏁</span> Motorsport</div>
   </div>
 
   <script>
-    // FORCE UPDATE v11 - accurate images
+    // FORCE UPDATE v13 - fun icons + real Formula Off-Road
     const map = L.map('map', { center: [64.9, -18.5], zoom: 6, minZoom: 4, maxZoom: 12, tap: true });
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 19 }).addTo(map);
 
-    function makeIcon(color) {
-      return L.divIcon({ className: '', html: `<div style="background:${color};width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 6px rgba(0,0,0,0.5);"></div>`, iconSize: [20,20], iconAnchor: [10,10], popupAnchor: [0,-10] });
+    function makeEmojiIcon(emoji) {
+      return L.divIcon({
+        className: '',
+        html: `<div style="font-size:22px; text-align:center; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));">${emoji}</div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        popupAnchor: [0, -14]
+      });
     }
-    const icons = { city: makeIcon('#3b82f6'), glacier: makeIcon('#67e8f9'), epic: makeIcon('#fbbf24'), region: makeIcon('#34d399') };
 
-    fetch('data/locations.json?force=11')
+    const icons = {
+      city: makeEmojiIcon('🏙️'),
+      glacier: makeEmojiIcon('❄️'),
+      epic: makeEmojiIcon('⭐'),
+      region: makeEmojiIcon('🏁')
+    };
+
+    fetch('data/locations.json?force=13&t=' + Date.now())
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
-          const icon = icons[loc.type] || icons.city;
+          const icon = icons[loc.type] || icons.epic;
           const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
 
           let images = `
             <div class="popup-images">
-              <div><img src="${loc.image}" alt="Location"><div class="label">Location</div></div>
-              <div><img src="${loc.movie_image}" alt="Movie"><div class="label">Movie / Series</div></div>
+              <div><img src="${loc.image}" alt="Location" onerror="this.style.display='none'"><div class="label">Location</div></div>
+              <div><img src="${loc.movie_image}" alt="Movie" onerror="this.style.display='none'"><div class="label">Movie / Series</div></div>
           `;
           if (loc.race_image) {
-            images += `<div><img src="${loc.race_image}" alt="Race"><div class="label">Races / Events</div></div>`;
+            images += `<div><img src="${loc.race_image}" alt="Race" onerror="this.style.display='none'"><div class="label">Races / Events</div></div>`;
           }
           images += `</div>`;
 
