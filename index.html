@@ -1,1 +1,106 @@
-$(cat /tmp/index.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ISLAND - Epic Interactive Map</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; overflow: hidden; font-family: system-ui, sans-serif; background: #0a1628; color: #e8f0f8; }
+    #map { height: 100%; width: 100%; }
+    .title-overlay { position: absolute; top: 12px; left: 12px; z-index: 1000; background: rgba(10,22,40,0.92); padding: 12px 20px; border-radius: 10px; border: 2px solid #4a90a4; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .title-overlay h1 { font-size: 2rem; letter-spacing: 6px; color: #ffffff; text-shadow: 0 0 12px #4a90a4; margin: 0; }
+    .title-overlay p { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
+    .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 12px; border: 1px solid #4a90a4; max-width: 95vw; }
+    .leaflet-popup-tip { background: #0f1f33; }
+    .popup-content { font-size: 0.88rem; max-height: 70vh; overflow-y: auto; }
+    .popup-content h3 { color: #7ec8e3; margin: 0 0 8px 0; font-size: 1.2rem; }
+    .popup-content .temp { color: #7dd3fc; font-weight: bold; margin: 6px 0; background: rgba(74,144,164,0.25); padding: 6px 10px; border-radius: 6px; }
+    .popup-content .epic { color: #ffd700; font-style: italic; margin: 6px 0; }
+    .popup-content .source { color: #b8a0ff; margin: 8px 0 6px 0; font-size: 0.82rem; border-top: 1px solid #4a90a4; padding-top: 8px; line-height: 1.4; }
+    .popup-images { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .popup-images > div { width: 48%; }
+    .popup-images img { width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; }
+    .popup-images .label { font-size: 0.65rem; text-align: center; opacity: 0.85; margin-top: 2px; }
+    .legend { position: absolute; bottom: 18px; right: 12px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px; border: 2px solid #4a90a4; font-size: 0.85rem; min-width: 170px; max-height: 50vh; overflow-y: auto; }
+    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+    .legend-emoji { font-size: 1.3rem; }
+    @media (max-width: 600px) { .title-overlay h1 { font-size: 1.5rem; } .popup-images img { height: 90px; } }
+  </style>
+</head>
+<body>
+  <div class="title-overlay">
+    <h1>ISLAND</h1>
+    <p>Epic Interactive Map • Tap markers 🎮</p>
+  </div>
+  <div id="map"></div>
+  <div class="legend">
+    <strong>Legend 🗺️</strong>
+    <div class="legend-item"><span class="legend-emoji">🏖️</span> Beach</div>
+    <div class="legend-item"><span class="legend-emoji">💧</span> Waterfall</div>
+    <div class="legend-item"><span class="legend-emoji">🧊</span> Glacier Lagoon</div>
+    <div class="legend-item"><span class="legend-emoji">⛰️</span> Mountain</div>
+    <div class="legend-item"><span class="legend-emoji">🌋</span> Volcano / Crater</div>
+    <div class="legend-item"><span class="legend-emoji">🕳️</span> Cave</div>
+    <div class="legend-item"><span class="legend-emoji">💨</span> Geyser</div>
+    <div class="legend-item"><span class="legend-emoji">🏁</span> Motorsport</div>
+    <div class="legend-item"><span class="legend-emoji">🏙️</span> City</div>
+    <div class="legend-item"><span class="legend-emoji">❄️</span> Glacier</div>
+    <div class="legend-item"><span class="legend-emoji">🌍</span> Tectonic / Epic</div>
+  </div>
+
+  <script>
+    // FORCE UPDATE v16 - unique images + custom emojis
+    const map = L.map('map', { center: [64.9, -18.5], zoom: 6, minZoom: 4, maxZoom: 12, tap: true });
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 19 }).addTo(map);
+
+    function makeEmojiIcon(emoji) {
+      return L.divIcon({
+        className: '',
+        html: `<div style="font-size:22px; text-align:center; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));">${emoji}</div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        popupAnchor: [0, -14]
+      });
+    }
+
+    fetch('data/locations.json?force=16&t=' + Date.now())
+      .then(r => r.json())
+      .then(locations => {
+        locations.forEach(loc => {
+          const emoji = loc.emoji || '⭐';
+          const icon = makeEmojiIcon(emoji);
+          const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
+
+          let images = `
+            <div class="popup-images">
+              <div><img src="${loc.image}" alt="Location" onerror="this.parentElement.style.display='none'"><div class="label">Location</div></div>
+              <div><img src="${loc.movie_image}" alt="Movie" onerror="this.parentElement.style.display='none'"><div class="label">Movie / Series</div></div>
+          `;
+          if (loc.race_image) {
+            images += `<div><img src="${loc.race_image}" alt="Race" onerror="this.parentElement.style.display='none'"><div class="label">Races / Events</div></div>`;
+          }
+          images += `</div>`;
+
+          marker.bindPopup(`
+            <div class="popup-content">
+              <h3>${loc.name}</h3>
+              <p>${loc.description}</p>
+              <p class="temp">🌡️ Summer: ${loc.temp_summer} | Winter: ${loc.temp_winter}</p>
+              <p class="epic">✨ ${loc.epic}</p>
+              <p class="source">🎬 ${loc.source}</p>
+              ${images}
+            </div>
+          `, { maxWidth: 420 });
+        });
+      })
+      .catch(e => console.error('Load error:', e));
+  </script>
+</body>
+</html>
