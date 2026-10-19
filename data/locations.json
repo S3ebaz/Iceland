@@ -11,7 +11,7 @@
     "description": "Black sand beach with hexagonal basalt columns, sea caves and powerful Atlantic waves.",
     "epic": "Legendary black coast",
     "source": "Film/TV: Game of Thrones, Rogue One. Games: Death Stranding, Hellblade II.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Reynisfjara_Black_Sand_Beach%2C_Iceland_%28Unsplash%29.jpg",
+    "image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80",
     "movie_image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=500&fit=crop&q=80"
   },
   {
@@ -26,7 +26,7 @@
     "description": "UNESCO site where North American and Eurasian tectonic plates pull apart.",
     "epic": "Ancient tectonic rift",
     "source": "Film/TV: Game of Thrones. Games: God of War Ragnarök, Hellblade II.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Thingvellir%2C_Iceland_%28Unsplash%29.jpg",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80",
     "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
@@ -41,7 +41,7 @@
     "description": "Glacial lagoon filled with blue icebergs that drift toward Diamond Beach.",
     "epic": "Ice diamond lagoon",
     "source": "Film: Batman Begins, Die Another Day, Interstellar.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/J%C3%B6kuls%C3%A1rl%C3%B3n_glaciers_%28Unsplash%29.jpg",
+    "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80",
     "movie_image": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=500&fit=crop&q=80"
   },
   {
@@ -56,8 +56,8 @@
     "description": "Europe’s most powerful waterfall by volume. 100 m wide, 44 m drop.",
     "epic": "Prometheus opening scene",
     "source": "Film: Prometheus (2012) opening sequence.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Dettifoss_waterfall%2C_Iceland%2C_20240716_1506_1568.jpg/1280px-Dettifoss_waterfall%2C_Iceland%2C_20240716_1506_1568.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "akureyri",
@@ -87,8 +87,8 @@
     "description": "Perfect 60 m high waterfall. Mist often creates rainbows at the base.",
     "epic": "Epic rainbow waterfall",
     "source": "Film: Thor: The Dark World, The Secret Life of Walter Mitty.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Skogafoss%2C_Iceland_%28Unsplash%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "kirkjufell",
@@ -102,8 +102,8 @@
     "description": "Iconic arrowhead mountain (463 m) with the nearby Kirkjufellsfoss waterfall.",
     "epic": "Arrowhead Mountain – Game of Thrones",
     "source": "Film/TV: Game of Thrones (Seasons 6–7).",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Kirkjufell_mountain_%28Unsplash%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "grjotagja",
@@ -117,8 +117,8 @@
     "description": "Lava cave with a brilliant blue geothermal pool. Famous Game of Thrones location.",
     "epic": "Game of Thrones – Jon & Ygritte cave",
     "source": "Film/TV: Game of Thrones Season 3.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Grj%C3%B3tagj%C3%A1_caves_in_summer_2009_%281%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "kerid",
@@ -132,8 +132,8 @@
     "description": "Volcanic crater with turquoise lake and striking red scoria walls.",
     "epic": "Colorful volcanic caldera",
     "source": "Travel & nature documentaries.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Keri%C3%B0_volcanic_crater%2C_Iceland%2C_20230502_1533_4283.jpg/1280px-Keri%C3%B0_volcanic_crater%2C_Iceland%2C_20230502_1533_4283.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "studlagil",
@@ -148,7 +148,7 @@
     "epic": "Basalt column cathedral",
     "source": "Nature & travel photography.",
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80",
-    "movie_image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&h=500&fit=crop&q=80"
+    "movie_image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "seljalandsfoss",
@@ -162,8 +162,8 @@
     "description": "60 m waterfall you can walk behind. Fed by Eyjafjallajökull meltwater.",
     "epic": "Walk-behind waterfall",
     "source": "Film: The Juniper Tree (with Björk).",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Seljalandsfoss_waterfall_in_motion_%28Unsplash%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "strokkur",
@@ -192,8 +192,8 @@
     "description": "Glacier-capped stratovolcano. Inspiration for Journey to the Center of the Earth.",
     "epic": "Entrance to the Center of the Earth",
     "source": "Literature: Jules Verne. Films & games.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sn%C3%A6fellsj%C3%B6kull_2024_%280750%29.jpg/1280px-Sn%C3%A6fellsj%C3%B6kull_2024_%280750%29.jpg",
-    "movie_image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80"
+    "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80",
+    "movie_image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&q=80"
   },
   {
     "id": "vatnajokull",
@@ -207,7 +207,7 @@
     "description": "Europe’s largest ice cap by volume. Home to ice caves and outlet glaciers.",
     "epic": "Ancient ice fortress",
     "source": "Film: Game of Thrones, Interstellar.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Vatnaj%C3%B6kull_Glacier%2C_Iceland_%28Unsplash%29.jpg",
+    "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a3f?w=800&h=500&fit=crop&q=80",
     "movie_image": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=500&fit=crop&q=80"
   },
   {
