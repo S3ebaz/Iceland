@@ -2,36 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>ICELAND - Epic Interactive Map</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; overflow: hidden; font-family: system-ui, sans-serif; background: #0a1628; color: #e8f0f8; }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; width: 100%; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; background: #0a1628; color: #e8f0f8; }
     #map { height: 100%; width: 100%; }
-    .title-overlay { position: absolute; top: 12px; left: 12px; z-index: 1000; background: rgba(10,22,40,0.92); padding: 12px 20px; border-radius: 10px; border: 2px solid #4a90a4; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    .title-overlay h1 { font-size: 2rem; letter-spacing: 6px; color: #ffffff; text-shadow: 0 0 12px #4a90a4; margin: 0; }
-    .title-overlay p { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
-    .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 12px; border: 1px solid #4a90a4; max-width: 95vw; }
+    .title-overlay { position: absolute; top: 8px; left: 8px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 8px 14px; border-radius: 12px; border: 2px solid #4a90a4; box-shadow: 0 4px 20px rgba(0,0,0,0.5); max-width: calc(100% - 16px); }
+    .title-overlay h1 { font-size: 1.6rem; letter-spacing: 4px; color: #ffffff; text-shadow: 0 0 12px #4a90a4; margin: 0; }
+    .title-overlay p { font-size: 0.75rem; opacity: 0.85; margin-top: 2px; }
+    .leaflet-popup-content-wrapper { background: #0f1f33; color: #e8f0f8; border-radius: 16px; border: 1px solid #4a90a4; max-width: 94vw; }
     .leaflet-popup-tip { background: #0f1f33; }
-    .popup-content { font-size: 0.88rem; max-height: 70vh; overflow-y: auto; }
-    .popup-content h3 { color: #7ec8e3; margin: 0 0 8px 0; font-size: 1.2rem; }
-    .popup-content .temp { color: #7dd3fc; font-weight: bold; margin: 6px 0; background: rgba(74,144,164,0.25); padding: 6px 10px; border-radius: 6px; }
-    .popup-content .epic { color: #ffd700; font-style: italic; margin: 6px 0; }
-    .popup-content .source { color: #b8a0ff; margin: 8px 0 6px 0; font-size: 0.82rem; border-top: 1px solid #4a90a4; padding-top: 8px; line-height: 1.4; }
-    .popup-images { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .popup-images > div { width: 48%; }
-    .popup-images img { width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #4a90a4; }
-    .popup-images .label { font-size: 0.65rem; text-align: center; opacity: 0.85; margin-top: 2px; }
-    .legend { position: absolute; bottom: 18px; right: 12px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 12px 14px; border-radius: 10px; border: 2px solid #4a90a4; font-size: 0.85rem; min-width: 170px; max-height: 50vh; overflow-y: auto; }
-    .legend strong { display: block; margin-bottom: 8px; color: #c9e8ff; }
-    .legend-item { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
-    .legend-emoji { font-size: 1.3rem; }
-    @media (max-width: 600px) { .title-overlay h1 { font-size: 1.5rem; } .popup-images img { height: 90px; } }
+    .leaflet-popup-close-button { font-size: 22px !important; padding: 8px 10px !important; color: #fff !important; }
+    .popup-content { font-size: 0.95rem; max-height: 75vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 4px 2px; }
+    .popup-content h3 { color: #7ec8e3; margin: 0 0 8px 0; font-size: 1.25rem; }
+    .popup-content .temp { color: #7dd3fc; font-weight: bold; margin: 8px 0; background: rgba(74,144,164,0.3); padding: 8px 12px; border-radius: 8px; }
+    .popup-content .epic { color: #ffd700; font-style: italic; margin: 8px 0; }
+    .popup-content .source { color: #b8a0ff; margin: 10px 0 8px 0; font-size: 0.85rem; border-top: 1px solid #4a90a4; padding-top: 10px; line-height: 1.45; }
+    .popup-images { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .popup-images > div { width: 100%; }
+    .popup-images img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; border: 1px solid #4a90a4; }
+    .popup-images .label { font-size: 0.7rem; text-align: center; opacity: 0.9; margin-top: 4px; }
+    .legend { position: absolute; bottom: 12px; right: 8px; z-index: 1000; background: rgba(10,22,40,0.94); padding: 10px 12px; border-radius: 12px; border: 2px solid #4a90a4; font-size: 0.8rem; min-width: 150px; max-height: 45vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+    .legend strong { display: block; margin-bottom: 6px; color: #c9e8ff; font-size: 0.9rem; }
+    .legend-item { display: flex; align-items: center; gap: 6px; margin: 5px 0; }
+    .legend-emoji { font-size: 1.2rem; }
+    .leaflet-control-zoom { margin-bottom: 80px !important; }
+    @media (min-width: 700px) {
+      .title-overlay { top: 12px; left: 12px; padding: 12px 20px; }
+      .title-overlay h1 { font-size: 2rem; letter-spacing: 6px; }
+      .popup-images { flex-direction: row; flex-wrap: wrap; }
+      .popup-images > div { width: 48%; }
+      .popup-images img { height: 110px; }
+      .legend { bottom: 18px; right: 12px; min-width: 170px; }
+    }
   </style>
 </head>
 <body>
@@ -56,21 +67,33 @@
   </div>
 
   <script>
-    // FORCE UPDATE v17 - reliable Unsplash images
-    const map = L.map('map', { center: [64.9, -18.5], zoom: 6, minZoom: 4, maxZoom: 12, tap: true });
+    // FORCE UPDATE v18 - mobile optimized
+    const isMobile = window.innerWidth < 700;
+    const map = L.map('map', { 
+      center: [64.9, -18.5], 
+      zoom: isMobile ? 5 : 6, 
+      minZoom: 4, 
+      maxZoom: 12, 
+      tap: true,
+      zoomControl: true,
+      touchZoom: true,
+      doubleClickZoom: true,
+      scrollWheelZoom: true
+    });
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 19 }).addTo(map);
 
     function makeEmojiIcon(emoji) {
+      const size = isMobile ? 32 : 28;
       return L.divIcon({
         className: '',
-        html: `<div style="font-size:22px; text-align:center; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));">${emoji}</div>`,
-        iconSize: [28, 28],
-        iconAnchor: [14, 14],
-        popupAnchor: [0, -14]
+        html: `<div style="font-size:${isMobile ? 26 : 22}px; text-align:center; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8)); width:${size}px; height:${size}px; display:flex; align-items:center; justify-content:center;">${emoji}</div>`,
+        iconSize: [size, size],
+        iconAnchor: [size/2, size/2],
+        popupAnchor: [0, -size/2]
       });
     }
 
-    fetch('data/locations.json?force=17&t=' + Date.now())
+    fetch('data/locations.json?force=18&t=' + Date.now())
       .then(r => r.json())
       .then(locations => {
         locations.forEach(loc => {
@@ -97,10 +120,15 @@
               <p class="source">🎬 ${loc.source}</p>
               ${images}
             </div>
-          `, { maxWidth: 420 });
+          `, { maxWidth: isMobile ? window.innerWidth - 40 : 420, autoPan: true, keepInView: true });
         });
       })
       .catch(e => console.error('Load error:', e));
+
+    // Better mobile popup handling
+    map.on('popupopen', function() {
+      setTimeout(() => map.invalidateSize(), 100);
+    });
   </script>
 </body>
 </html>
